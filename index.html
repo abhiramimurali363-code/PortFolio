@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhirami | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+  --green:#0f6b4b;
+  --dark:#0c3f2d;
+  --yellow:#f6d84c;
+  --light:#e8e8e8;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--green);
+  color:white;
+  overflow-x:hidden;
+}
+
+/* GRID BACKGROUND */
+body::before{
+  content:"";
+  position:fixed;
+  width:100%;
+  height:100%;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size:60px 60px;
+  z-index:-1;
+}
+
+/* ================= NAVIGATION ================= */
+
+nav{
+  position:fixed;
+  width:100%;
+  padding:30px 8%;
+  display:flex;
+  justify-content:flex-end;
+  z-index:1000;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:30px;
+  font-weight:500;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:var(--yellow);
+}
+
+/* ================= HERO SECTION ================= */
+
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 8%;
+}
+
+/* LEFT SIDE */
+
+.hero-left{
+  max-width:600px;
+}
+
+.hero-left h1{
+  font-family:'Montserrat',sans-serif;
+  font-size:90px;
+  font-weight:900;
+  line-height:0.9;
+  color:var(--yellow);
+}
+
+.hero-left h2{
+  font-size:28px;
+  margin-top:30px;
+}
+
+.hero-left p{
+  margin-top:20px;
+  line-height:1.8;
+  color:var(--light);
+}
+
+/* BUTTON */
+
+.resume-btn{
+  display:inline-block;
+  margin-top:25px;
+  background:var(--yellow);
+  color:black;
+  padding:12px 30px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.resume-btn:hover{
+  transform:scale(1.05);
+}
+
+/* SOCIAL ICONS */
+
+.social-icons{
+  margin-top:25px;
+}
+
+.social-icons a{
+  color:white;
+  font-size:22px;
+  margin-right:20px;
+  transition:0.3s;
+}
+
+.social-icons a:hover{
+  color:var(--yellow);
+}
+
+/* RIGHT SIDE IMAGE */
+
+.hero-right{
+  position:relative;
+}
+
+.hero-right img{
+  width:320px;   /* reduced from 420px */
+  border-radius:40px;
+  box-shadow:0 25px 60px rgba(0,0,0,0.5);
+}
+
+/* DECORATIVE SHAPE */
+
+
+
+/* ================= ABOUT SECTION ================= */
+
+.about{
+  height:100vh;
+  padding:120px 8%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:left;
+  text-align:left;
+  position:relative;
+}
+
+.about-heading{
+  font-family:'Montserrat',sans-serif;
+   font-size:70px;
+  text-align:left;
+  font-weight:900;
+  color:var(--yellow);
+  margin-bottom:60px;
+}
+
+.about-container{
+  width:100%;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  align-items:center;
+  gap:40px;
+}
+
+.about-text{
+  font-size:16px;
+  line-height:1.8;
+  color:var(--light);
+}
+
+.about-text h4{
+  margin-top:30px;
+  font-weight:500;
+  color:white;
+}
+
+
+.about-image{
+  display:flex;
+  justify-content:center;
+}
+
+.about-image img{
+  width:280px;
+  border-radius:50%;
+  box-shadow:0 25px 60px rgba(0,0,0,0.5);
+}
+
+/* ================= EDUCATION SECTION ================= */
+
+.education-section{
+  height:100vh;              /* force full screen */
+  padding:90px 8% 40px;      /* reduced padding */
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  box-sizing:border-box;
+}
+
+.section-heading{
+  font-family:'Montserrat',sans-serif;
+  font-size:60px;
+  font-weight:900;
+  color:var(--yellow);
+  text-align:left;
+  margin-bottom:50px;
+}
+
+.edu-cert-container{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+}
+
+/* Timeline */
+
+.timeline{
+  position:relative;
+  padding-left:40px;
+}
+
+/* Vertical Line */
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:15px;
+  top:0;
+  width:3px;
+  height:100%;
+  background:rgba(255,255,255,0.3);
+}
+
+.timeline-title{
+  font-size:28px;
+  margin-bottom:40px;
+  font-weight:600;
+  color:white;
+}
+
+/* Timeline Item */
+
+.timeline-item{
+  position:relative;
+  margin-bottom:50px;
+}
+
+.timeline-item::before{
+  content:"";
+  position:absolute;
+  left:-27px;
+  top:5px;
+  width:14px;
+  height:14px;
+  background:var(--yellow);
+  border-radius:50%;
+}
+
+.year{
+  font-size:14px;
+  color:var(--yellow);
+  font-weight:500;
+}
+
+.timeline-item h3{
+  margin:10px 0 5px;
+  font-size:20px;
+}
+
+.timeline-item p{
+  color:var(--light);
+  font-size:15px;
+}
+
+/* ================= PROJECTS SECTION ================= */
+
+.projects-section{
+  min-height:100vh;
+  padding:90px 8%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.projects-heading{
+  font-family:'Montserrat',sans-serif;
+  font-size:70px;
+  font-weight:900;
+  color:var(--yellow);
+  margin-bottom:70px;
+}
+
+.projects-container{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:40px;
+}
+
+/* Project Card */
+
+.project-card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  padding:30px;
+  border-radius:20px;
+  transition:0.4s ease;
+  backdrop-filter:blur(10px);
+}
+
+.project-card:hover{
+  transform:translateY(-10px);
+  border-color:var(--yellow);
+}
+
+/* Project Image */
+
+.project-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:15px;
+  margin-bottom:20px;
+}
+
+/* Project Title */
+
+.project-card h3{
+  font-size:22px;
+  margin-bottom:15px;
+  color:white;
+}
+
+/* Project Description */
+
+.project-card p{
+  font-size:15px;
+  line-height:1.7;
+  color:var(--light);
+}
+
+/* ================= SKILLS SECTION ================= */
+
+.skills-section{
+  height:100vh;              /* force full screen */
+  padding:80px 8%;          /* reduced from 140px */
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  box-sizing:border-box;
+}
+
+.skills-heading{
+  font-family:'Montserrat',sans-serif;
+  font-size:55px;
+  font-weight:900;
+  color:var(--yellow);
+  text-align:left;
+  margin-bottom:50px;
+}
+
+.skills-container{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+}
+
+/* Skill Card */
+
+.skill-box{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  padding:40px;
+  border-radius:25px;
+  backdrop-filter:blur(10px);
+  transition:0.4s;
+}
+
+.skill-box:hover{
+  border-color:var(--yellow);
+  transform:translateY(-8px);
+}
+
+.skill-title{
+  font-size:28px;
+  margin-bottom:30px;
+  color:white;
+  font-weight:600;
+}
+
+/* Skill List */
+
+.skill-list{
+  list-style:none;
+}
+
+.skill-list li{
+  margin-bottom:18px;
+  font-size:16px;
+  color:var(--light);
+  position:relative;
+  padding-left:25px;
+}
+
+.skill-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:8px;
+  width:10px;
+  height:10px;
+  background:var(--yellow);
+  border-radius:50%;
+}
+
+/* ================= CONTACT SECTION ================= */
+
+.contact-section{
+  height:100vh;              /* force exact screen height */
+  padding:100px 8%;          /* reduce top padding */
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:60px;
+  box-sizing:border-box;
+}
+
+/* LEFT SIDE */
+
+.contact-left{
+  flex:1;
+}
+
+.contact-left h1{
+  font-family:'Montserrat',sans-serif;
+  font-size:110px;
+  font-weight:900;
+  line-height:0.9;
+}
+
+.contact-left .yellow{
+  color:var(--yellow);
+}
+
+.contact-left .white{
+  color:white;
+}
+
+.contact-left p{
+  margin-top:30px;
+  font-size:18px;
+  color:var(--light);
+}
+
+/* IMAGE SPACE */
+
+.contact-image{
+  margin-top:40px;
+}
+
+.contact-image img{
+  width:250px;
+  border-radius:20px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.5);
+}
+
+/* RIGHT SIDE CARD */
+
+.contact-card{
+  flex:1;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.15);
+  padding:50px;
+  border-radius:30px;
+  backdrop-filter:blur(10px);
+}
+
+.contact-item{
+  margin-bottom:40px;
+}
+
+.contact-item h4{
+  font-size:16px;
+  color:var(--light);
+  margin-bottom:8px;
+}
+
+.contact-item p,
+.contact-item a{
+  font-size:22px;
+  color:white;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.contact-item a:hover{
+  color:var(--yellow);
+}
+
+
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+  body{overflow:auto;}
+  .hero{
+    flex-direction:column;
+    text-align:center;
+    padding-top:120px;
+  }
+  .hero-left h1{
+    font-size:60px;
+  }
+  .hero-right img{
+    width:300px;
+    margin-top:40px;
+  }
+  .about{
+  height:auto;
+  padding:120px 8%;
+}
+
+.about-container{
+  grid-template-columns:1fr;
+  text-align:center;
+}
+
+.about-heading{
+  font-size:55px;
+}
+
+.about-image img{
+  width:240px;
+  margin:30px 0;
+}
+.edu-cert-container{
+    grid-template-columns:1fr;
+    gap:60px;
+  }
+
+  .section-heading{
+    font-size:50px;
+  }
+  .projects-container{
+    grid-template-columns:1fr;
+  }
+
+  .projects-heading{
+    font-size:50px;
+  }
+    .skills-container{
+    grid-template-columns:1fr;
+  }
+
+  .skills-heading{
+    font-size:50px;
+  }
+    .contact-section{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .contact-left h1{
+    font-size:70px;
+  }
+
+  .contact-card{
+    width:100%;
+  }
+}
+
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#">Home</a>
+  <a href="#about">About</a>
+  <a href="#education">Education</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+  <div class="hero-left">
+    <h1>Hi I'm<br>Abhirami</h1>
+
+    
+
+    <p>
+      Final-year M.Sc Statistics with Data Science student passionate about 
+      turning data into meaningful insights.
+    </p>
+
+    <!-- Resume (PDF in same folder) -->
+    <a href="Abhirami_Resume.pdf" class="resume-btn" target="_blank">
+      View Resume
+    </a>
+
+    <!-- Social Links -->
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/abhiramim24" target="_blank">
+        <i class="fab fa-linkedin"></i>
+      </a>
+
+      <a href="https://github.com/yourgithub" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <img src="profile.jpg" alt="Abhirami">
+  </div>
+
+</section>
+
+
+<!-- ================= ABOUT SECTION ================= -->
+
+<section id="about" class="about">
+
+  <h1 class="about-heading">ABOUT ME</h1>
+
+  <div class="about-container">
+
+    <!-- LEFT TEXT -->
+    <div class="about-text left">
+      <p>
+        I am a final-year M.Sc Statistics with Data Science student 
+        passionate about transforming data into meaningful insights.
+        My strong foundation in statistical modelling, regression 
+        analysis, and data interpretation helps me solve real-world problems.
+      </p>
+
+      
+    </div>
+
+    <!-- CENTER IMAGE -->
+    <div class="about-image">
+      <img src="about.jpeg" alt="Abhirami">
+    </div>
+
+    <!-- RIGHT TEXT -->
+    <div class="about-text right">
+      <p>
+        With academic experience and analytical training,
+        I aim to blend statistical knowledge with practical 
+        applications. I believe every dataset tells a story 
+        and I strive to uncover patterns that create impact.
+      </p>
+
+      
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= EDUCATION & CERTIFICATIONS ================= -->
+
+<section id="education" class="education-section">
+
+  <h1 class="section-heading">EDUCATION </h1>
+
+
+  <div class="edu-cert-container">
+
+    <!-- EDUCATION SIDE -->
+    <div class="timeline">
+
+      <h2 class="timeline-title">Education</h2>
+
+      <div class="timeline-item">
+        <span class="year">2024 – 2025</span>
+        <h3>M.Sc Statistics with Data Science</h3>
+        <p>MG University</p>
+      </div>
+
+      <div class="timeline-item">
+        <span class="year">2021 – 2024</span>
+        <h3>B.Sc Mathematics</h3>
+        <p>St. Teresa's College, Ernakulam</p>
+      </div>
+
+    </div>
+
+    <!-- CERTIFICATION SIDE -->
+    <div class="timeline">
+
+      <h2 class="timeline-title">Certifications</h2>
+
+      <div class="timeline-item">
+        <span class="year">2025</span>
+        <h3>Google Cloud Data Analytics</h3>
+        
+      </div>
+
+      <div class="timeline-item">
+        <span class="year">2025</span>
+        <h3>MOS: Microsoft Excel Expert </h3>
+        
+      </div>
+
+      <div class="timeline-item">
+        <span class="year">2025</span>
+        <h3>MOS: Microsoft Power BI </h3>
+        
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= PROJECTS SECTION ================= -->
+
+<section id="projects" class="projects-section">
+
+  <h1 class="projects-heading">MY PROJECTS</h1>
+
+  <div class="projects-container">
+
+    <!-- Project 1 -->
+    <div class="project-card">
+      <img src="project1.webp" alt="Student Satisfaction Scale">
+      <h3>Student Satisfaction Scale</h3>
+      <p>
+        Developing and validated a standardized measurement scale 
+        for higher education institutions to assess student experience 
+        and institutional performance.
+      </p>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <img src="project2.jpg" alt="Result Analysis">
+      <h3>Result Analysis</h3>
+      <p>
+        Applied regression techniques and calculated 95% confidence 
+        intervals to evaluate academic performance and interpret 
+        statistical trends.
+      </p>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card">
+      <img src="project3.webp" alt="Course Outcome Analysis">
+      <h3>Course Outcome Analysis</h3>
+      <p>
+        Evaluated academic metrics and analyzed performance indicators 
+        to support curriculum improvement and outcome-based education.
+      </p>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-card">
+      <img src="project4.jpg" alt="Knot Theory Study">
+      <h3>Knot Theory Study</h3>
+      <p>
+        Studied topological invariants and mathematical transformations, 
+        exploring structural properties within advanced mathematical theory.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= SKILLS SECTION ================= -->
+
+<section id="skills" class="skills-section">
+
+  <h1 class="skills-heading">SKILLS</h1>
+
+  <div class="skills-container">
+
+    <!-- Technical Skills -->
+    <div class="skill-box">
+      <h2 class="skill-title">Technical Skills</h2>
+      <ul class="skill-list">
+        <li>Python</li>
+        <li>R Programming</li>
+        <li>Statistics</li>
+        <li>Regression & Hypothesis Testing</li>
+        <li>Power BI</li>
+        <li>MS Excel (Advanced)</li>
+        <li>Jamovi</li>
+      </ul>
+    </div>
+
+    <!-- Soft Skills -->
+    <div class="skill-box">
+      <h2 class="skill-title">Soft Skills</h2>
+      <ul class="skill-list">
+        <li>Analytical Thinking</li>
+        <li>Problem Solving</li>
+        <li>Communication Skills</li>
+        <li>Team Collaboration</li>
+        <li>Time Management</li>
+        <li>Adaptability</li>
+      </ul>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= CONTACT SECTION ================= -->
+
+<section id="contact" class="contact-section">
+
+  <!-- LEFT SIDE -->
+  <div class="contact-left">
+    <h1>
+      <span class="yellow">GET IN</span><br>
+      <span class="white">TOUCH</span>
+    </h1>
+
+    <p>Let’s collaborate and bring your ideas to life!</p>
+
+   
+
+  <!-- RIGHT SIDE CONTACT CARD -->
+  <div class="contact-card">
+
+    <div class="contact-item">
+      <h4>Mobile Number</h4>
+      <p>+91 6235470633</p>
+    </div>
+
+    <div class="contact-item">
+      <h4>Email</h4>
+      <a href="mailto:abhiramimurali363@gmail.com">abhiramimurali363@gmail.com</a>
+    </div>
+
+    <div class="contact-item">
+      <h4>LinkedIn</h4>
+      <a href="https://www.linkedin.com/in/abhiramim24" target="_blank">
+        linkedin.com/in/abhiramim24
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+</body>
+</html>

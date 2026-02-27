@@ -10,8 +10,8 @@
 
 <style>
 :root{
-  --green:#0f6b4b;
-  --dark:#0c3f2d;
+  --green:#000b07;
+  --dark:#edf9f5;
   --yellow:#f6d84c;
   --light:#e8e8e8;
 }
@@ -628,7 +628,11 @@ nav a:hover{
       <a href="https://www.linkedin.com/in/abhiramim24" target="_blank">
         <i class="fab fa-linkedin"></i>
       </a>
-
+<style>
+  a {
+  text-decoration: none;
+}
+</style>
       <a href="https://github.com/abhiramimurali363-code" target="_blank">
         <i class="fab fa-github"></i>
       </a>
@@ -662,10 +666,36 @@ nav a:hover{
       
     </div>
 
-    <!-- CENTER IMAGE -->
-    <div class="about-image">
-      <img src="about.jpeg" alt="Abhirami">
-    </div>
+ <!-- CENTER IMAGE --> 
+<div class="about-image">
+   <img src="about.jpeg" alt="Abhirami">
+</div>
+<style>
+  /* CENTER IMAGE CONTAINER */
+.about-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* UNIQUE ORGANIC SHAPE */
+.about-image img {
+  width: 340px;
+  height: 420px;
+  object-fit: cover;
+
+  border-radius: 60% 50% 65% 45% / 75% 55% 65% 45%; 
+  /* creates organic blob shape */
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transition: 0.4s ease;
+}
+
+/* Slight hover animation */
+.about-image img:hover {
+  transform: scale(1.03);
+}
+</style>
 
     <!-- RIGHT TEXT -->
     <div class="about-text right">
@@ -680,6 +710,57 @@ nav a:hover{
     </div>
 
   </div>
+  <style>
+.about-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Sticker Container */
+.sticker {
+  position: relative;
+  display: inline-block;
+}
+
+/* Irregular Cut Shape */
+.sticker img {
+  width: 350px;
+  height: 420px;
+  object-fit: cover;
+
+  clip-path: polygon(
+    10% 5%, 85% 0%, 100% 20%, 
+    95% 85%, 70% 100%, 
+    15% 95%, 0% 70%, 5% 25%
+  );
+
+  /* White Sticker Border Effect */
+  filter:
+    drop-shadow(0 0 0 12px white)
+    drop-shadow(0 25px 40px rgba(0,0,0,0.35));
+
+  transition: 0.4s ease;
+}
+
+/* Hover Pop */
+.sticker img:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+/* About Text Styling */
+.about-text p {
+  font-size: 20px;       /* Increase text size */
+  line-height: 1.8;      /* Better readability */
+  letter-spacing: 0.5px;
+}
+
+/* If you want it even slightly bigger */
+@media (min-width: 992px) {
+  .about-text p {
+    font-size: 22px;
+  }
+}
+</style>
 
 </section>
 
@@ -751,7 +832,7 @@ nav a:hover{
     <!-- Project 1 -->
     <div class="project-card">
       <img src="project1.webp" alt="Student Satisfaction Scale">
-      <h3>Student Satisfaction Scale</h3>
+      <h3>Student Satisfaction Scale(offline)</h3>
       <p>
         Developing and validated a standardized measurement scale 
         for higher education institutions to assess student experience 
@@ -762,7 +843,7 @@ nav a:hover{
     <!-- Project 2 -->
     <div class="project-card">
       <img src="project2.jpg" alt="Result Analysis">
-      <h3>Result Analysis</h3>
+      <h3>Result Analysis(offline)</h3>
       <p>
         Applied regression techniques and calculated 95% confidence 
         intervals to evaluate academic performance and interpret 
@@ -773,7 +854,7 @@ nav a:hover{
     <!-- Project 3 -->
     <div class="project-card">
       <img src="project3.webp" alt="Course Outcome Analysis">
-      <h3>Course Outcome Analysis</h3>
+      <h3>Course Outcome Analysis(offline)</h3>
       <p>
         Evaluated academic metrics and analyzed performance indicators 
         to support curriculum improvement and outcome-based education.
@@ -783,7 +864,7 @@ nav a:hover{
     <!-- Project 4 -->
     <div class="project-card">
       <img src="project4.jpg" alt="Knot Theory Study">
-      <h3>Knot Theory Study</h3>
+      <h3>Knot Theory Study(offline)</h3>
       <p>
         Studied topological invariants and mathematical transformations, 
         exploring structural properties within advanced mathematical theory.
@@ -806,13 +887,13 @@ nav a:hover{
     <div class="skill-box">
       <h2 class="skill-title">Technical Skills</h2>
       <ul class="skill-list">
-        <li>Python</li>
-        <li>R Programming</li>
-        <li>Statistics</li>
-        <li>Regression & Hypothesis Testing</li>
-        <li>Power BI</li>
-        <li>MS Excel (Advanced)</li>
-        <li>Jamovi</li>
+        <li><i class="fa-brands fa-python"></i> Python</li>
+        <li><i class="fa-solid fa-chart-line"></i> R Programming</li>
+        <li><i class="fa-solid fa-square-root-variable"></i> Statistics</li>
+        <li><i class="fa-solid fa-chart-simple"></i> Regression & Hypothesis Testing</li>
+        <li><i class="fa-solid fa-chart-pie"></i> Power BI</li>
+        <li><i class="fa-solid fa-file-excel"></i> MS Excel (Advanced)</li>
+        <li><i class="fa-solid fa-database"></i> Jamovi</li>
       </ul>
     </div>
 
@@ -820,12 +901,12 @@ nav a:hover{
     <div class="skill-box">
       <h2 class="skill-title">Soft Skills</h2>
       <ul class="skill-list">
-        <li>Analytical Thinking</li>
-        <li>Problem Solving</li>
-        <li>Communication Skills</li>
-        <li>Team Collaboration</li>
-        <li>Time Management</li>
-        <li>Adaptability</li>
+        <li><i class="fa-solid fa-brain"></i> Analytical Thinking</li>
+        <li><i class="fa-solid fa-lightbulb"></i> Problem Solving</li>
+        <li><i class="fa-solid fa-comments"></i> Communication Skills</li>
+        <li><i class="fa-solid fa-people-group"></i> Team Collaboration</li>
+        <li><i class="fa-solid fa-clock"></i> Time Management</li>
+        <li><i class="fa-solid fa-arrows-rotate"></i> Adaptability</li>
       </ul>
     </div>
 
@@ -846,7 +927,15 @@ nav a:hover{
 
     <p>Let’s collaborate and bring your ideas to life!</p>
 
-   
+    <p class="contact-quote">
+      “Turning ideas into meaningful digital experiences.”
+    </p>
+
+    <a href="mailto:abhiramimurali363@gmail.com" class="contact-btn">
+      Let’s Talk →
+    </a>
+  </div>
+
 
   <!-- RIGHT SIDE CONTACT CARD -->
   <div class="contact-card">
@@ -858,7 +947,9 @@ nav a:hover{
 
     <div class="contact-item">
       <h4>Email</h4>
-      <a href="mailto:abhiramimurali363@gmail.com">abhiramimurali363@gmail.com</a>
+      <a href="mailto:abhiramimurali363@gmail.com">
+        abhiramimurali363@gmail.com
+      </a>
     </div>
 
     <div class="contact-item">
@@ -868,9 +959,43 @@ nav a:hover{
       </a>
     </div>
 
+    <div class="contact-item">
+      <h4>Availability</h4>
+      <p>Open to internships & freelance projects</p>
+    </div>
+
   </div>
 
 </section>
-
 </body>
+<style>
+  .contact-card {
+  transition: 0.4s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+.contact-item a {
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.contact-card {
+  transition: 0.4s ease;
+  border-radius: 20px;
+}
+
+.contact-card:hover {
+  box-shadow:
+   
+    0 0 40px rgba(244, 208, 63, 0.3),
+    0 20px 50px rgba(0, 0, 0, 0.3);
+  transform: translateY(-8px);
+}
+</style>
 </html>
+git add .
+git commit -m "Fixed duplicate HTML structure"
+git push origin main
